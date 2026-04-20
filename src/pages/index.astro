@@ -1,11 +1,1499 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import profileImage from "../assets/Doc.jpeg";
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand" href="#hero">Lic. Nicolás Antonio Coria</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarNav"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#about">Sobre mí</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#projects">Proyectos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#skills">Habilidades</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contacto</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section id="hero" class="hero-section">
+		<div class="hero-content">
+			<div class="container">
+				<div class="row align-items-center gx-5">
+					<div class="col-lg-7">
+						<h1 class="hero-title">Nicolás Antonio Coria</h1>
+						<p class="hero-subtitle">
+							Especialista en Automatización y Robótica
+						</p>
+						<div class="hero-buttons">
+							<a
+								href="#projects"
+								class="btn btn-primary btn-lg me-3"
+								>Ver Proyectos</a
+							>
+							<a
+								href="#contact"
+								class="btn btn-outline-light btn-lg"
+								>Contactar</a
+							>
+						</div>
+						<div class="hero-social">
+							<a
+								href="https://github.com/NicolasCoria-9"
+								class="social-link"
+								target="_blank"
+							>
+								<i class="fab fa-github"></i>
+								<span>GitHub</span>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/nicolas-coria-400340193/"
+								class="social-link"
+								target="_blank"
+							>
+								<i class="fab fa-linkedin"></i>
+								<span>LinkedIn</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="hero-image-container">
+							<div class="hero-image-placeholder">
+								<img
+									src={profileImage.src}
+									alt="Nicolás Antonio Coria"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-particles">
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+			<div class="particle"></div>
+		</div>
+		<div class="rain-container">
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+			<div class="rain-drop"></div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" class="py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<h2 class="section-title">Sobre mí</h2>
+					<p class="lead">
+						Licenciado especializado en automatización industrial y
+						control de procesos con sólida experiencia en sistemas
+						SCADA/HMI.
+					</p>
+					<p>
+						Licenciado en Automatización y Robótica con formación en
+						Mecatrónica y Electrónica. Me especializo en
+						programación de PLC (Siemens, Fatek, Schneider),
+						desarrollo de sistemas SCADA/HMI, y diseño de soluciones
+						de automatización para la industria. Actualmente trabajo
+						en Sodecar S.A. donde lidero proyectos de automatización
+						para procesos frigoríficos e industriales.
+					</p>
+					<div class="row mt-4">
+						<div class="col-6">
+							<div class="stat-item">
+								<h3>5+</h3>
+								<p>Años de experiencia</p>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="stat-item">
+								<h3>20+</h3>
+								<p>Proyectos industriales</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about-image">
+						<div class="image-placeholder">
+							<i class="fas fa-network-wired"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section id="projects" class="py-5 bg-light">
+		<div class="container">
+			<h2 class="section-title text-center">Proyectos Destacados</h2>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="project-card">
+						<div class="project-image">
+							<div class="image-placeholder">
+								<i class="fas fa-industry"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<h4>Automatización Condensadores de Amoníaco</h4>
+							<p>
+								Arquitectura distribuida en Siemens + SCADA
+								Weintek para control de condensadores
+								industriales.
+							</p>
+							<div class="project-tech">
+								<span class="badge bg-primary">Siemens PLC</span
+								>
+								<span class="badge bg-primary"
+									>Weintek SCADA</span
+								>
+								<span class="badge bg-primary">Ethernet IP</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="project-card">
+						<div class="project-image">
+							<div class="image-placeholder">
+								<i class="fas fa-temperature-low"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<h4>Automatización Secaderos Industriales</h4>
+							<p>
+								Programación en PLC Fatek + HMI Weintek para
+								control de secaderos industriales.
+							</p>
+							<div class="project-tech">
+								<span class="badge bg-primary">Fatek PLC</span>
+								<span class="badge bg-primary">Weintek HMI</span
+								>
+								<span class="badge bg-primary"
+									>Control de Procesos</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="project-card">
+						<div class="project-image">
+							<div class="image-placeholder">
+								<i class="fas fa-snowflake"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<h4>Automatización Cámaras Frigoríficas</h4>
+							<p>
+								Programación Schneider + visualización por
+								controladores industriales (CCG o IEA).
+							</p>
+							<div class="project-tech">
+								<span class="badge bg-primary"
+									>Schneider PLC</span
+								>
+								<span class="badge bg-primary">CCG/IEA</span>
+								<span class="badge bg-primary"
+									>Control Frigorífico</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="project-card">
+						<div class="project-image">
+							<div class="image-placeholder">
+								<i class="fas fa-chart-line"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<h4>SCADAs Implementados</h4>
+							<p>
+								Programación en EasyBuilder Pro con diferentes
+								protocolos de comunicacion industriales
+							</p>
+							<div class="project-tech">
+								<span class="badge bg-primary"
+									>EasyBuilder Pro</span
+								>
+								<span class="badge bg-primary"
+									>RTU - TCP/IP</span
+								>
+								<span class="badge bg-primary"
+									>Control Industrial</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="project-card">
+						<div class="project-image">
+							<div class="image-placeholder">
+								<i class="fas fa-cogs"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<h4>Manufacturing Execution System (MES)</h4>
+							<p>
+								Implementación de sistema de gestión de
+								producción para optimizar procesos industriales.
+							</p>
+							<div class="project-tech">
+								<span class="badge bg-primary"
+									>Sistema de Gestión</span
+								>
+								<span class="badge bg-primary"
+									>Optimización de Procesos</span
+								>
+								<span class="badge bg-primary"
+									>Gestión de Producción</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Skills Section -->
+	<section id="skills" class="py-5">
+		<div class="container">
+			<h2 class="section-title text-center">Habilidades</h2>
+			<div class="row">
+				<div class="col-lg-6">
+					<h4 class="mb-4">Automatización Industrial</h4>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Winprollader / Upperlogic</span>
+							<span>95%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 95%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>EasyBuilder Pro</span>
+							<span>92%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 92%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Tia Portal</span>
+							<span>90%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 90%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>EcoStruxure Machine</span>
+							<span>85%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 85%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Studio 5000 / RSLogix</span>
+							<span>80%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 80%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Controladores Industriales</span>
+							<span>90%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 90%"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<h4 class="mb-4">Software y Diseño</h4>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>AutoCAD</span>
+							<span>80%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 80%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>HTML/CSS/JavaScript</span>
+							<span>70%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 70%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Python</span>
+							<span>65%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 60%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Office Avanzado</span>
+							<span>80%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 80%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>SQL / Bases de Datos</span>
+							<span>50%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 50%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>Gestión de Proyectos</span>
+							<span>90%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 90%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="d-flex justify-content-between mb-1">
+							<span>IOT Industrial</span>
+							<span>60%</span>
+						</div>
+						<div class="progress mb-3">
+							<div class="progress-bar" style="width: 60%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section
+		id="contact"
+		class="py-5 text-white"
+		style="background-color: #212529;"
+	>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div
+						class="card shadow"
+						style="border: none; border-radius: 15px; background-color: #212529; background: linear-gradient(135deg, rgba(17, 60, 105, 0.95), rgba(62, 125, 218, 0.9);"
+					>
+						<div class="card-body p-4">
+							<h2
+								class="text-white mb-4"
+								style="font-weight: 600;"
+							>
+								Contacto
+							</h2>
+							<form
+								action="https://api.web3forms.com/submit"
+								method="POST"
+								class="needs-validation"
+								novalidate
+							>
+								<input
+									type="hidden"
+									name="access_key"
+									value="04eda78e-e58a-4822-ac83-d748466a31f2"
+								/>
+								<input
+									type="hidden"
+									name="subject"
+									value="Nuevo envío de formulario de contacto"
+								/>
+								<input
+									type="hidden"
+									name="reply_to"
+									value="nicolasacoria@gmail.com"
+								/>
+								<div class="mb-3">
+									<label
+										for="nombre"
+										class="form-label text-white"
+										style="font-weight: 500;">Nombre</label
+									>
+									<input
+										type="text"
+										class="form-control"
+										id="nombre"
+										name="nombre"
+										style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: white; border-radius: 8px;"
+										required
+									/>
+								</div>
+								<div class="mb-3">
+									<label
+										for="email"
+										class="form-label text-white"
+										style="font-weight: 500;"
+										>Correo Electrónico</label
+									>
+									<input
+										type="email"
+										class="form-control"
+										id="email"
+										name="email"
+										style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: white; border-radius: 8px;"
+										required
+									/>
+								</div>
+								<div class="mb-3">
+									<label
+										for="mensaje"
+										class="form-label text-white"
+										style="font-weight: 500;">Mensaje</label
+									>
+									<textarea
+										class="form-control"
+										id="mensaje"
+										name="mensaje"
+										rows="4"
+										style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: white; border-radius: 8px; resize: vertical;"
+										required></textarea>
+								</div>
+								<div class="text-center mt-4">
+									<button
+										type="submit"
+										class="btn btn-lg px-5"
+										style="background: linear-gradient(45deg, rgb(62, 125, 218), rgb(17, 60, 105)); border: none; border-radius: 25px; color: white; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(62, 125, 218, 0.3);"
+										onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(62, 125, 218, 0.4)';"
+										onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(62, 125, 218, 0.3)';"
+										>Enviar Mensaje</button
+									>
+								</div>
+								<div id="result" class="mt-3 text-center"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="contact-info text-center mt-4">
+					<p>
+						<i class="fas fa-envelope"></i> nicolasacoria@gmail.com
+					</p>
+					<p><i class="fas fa-phone"></i> +54 3492 328782</p>
+					<p>
+						<i class="fas fa-map-marker-alt"></i>Rafaela, Santa Fe,
+						Argentina
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-3">
+	<div class="container text-center">
+		<p>&copy; 2026 Lic. Nicolás Coria. Todos los derechos reservados.</p>
+	</div>
+</footer>
+
+<style>
+	/* Variables */
+	:root {
+		--primary-color: #113c69;
+		--secondary-color: #3e7dda;
+		--accent-color: #ff6b6b;
+		--text-light: #f8f9fa;
+		--text-dark: #212529;
+	}
+
+	/* Global Styles */
+	* {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		color: var(--text-dark);
+	}
+
+	/* Navigation */
+	.navbar {
+		background: rgba(17, 60, 105, 0.95) !important;
+		backdrop-filter: blur(10px);
+		transition: all 0.3s ease;
+	}
+
+	.navbar-brand {
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: var(--text-light) !important;
+	}
+
+	.nav-link {
+		color: var(--text-light) !important;
+		margin: 0 10px;
+		transition: color 0.3s ease;
+	}
+
+	.nav-link:hover {
+		color: var(--secondary-color) !important;
+	}
+
+	/* Hero Section */
+	.hero-section {
+		min-height: 100vh;
+		background: linear-gradient(
+			135deg,
+			var(--primary-color) 0%,
+			var(--secondary-color) 100%
+		);
+		background-size: 400% 400%;
+		animation: gradientShift 15s ease infinite;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: bold;
+		color: var(--text-light);
+		margin-bottom: 1rem;
+		animation: fadeInUp 1s ease;
+	}
+
+	.hero-image-container {
+		text-align: center;
+		animation: fadeInUp 1s ease 0.8s;
+		animation-fill-mode: both;
+	}
+
+	.hero-image-placeholder {
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+		background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.2)
+		);
+		border: 4px solid rgba(255, 255, 255, 0.3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		color: var(--text-light);
+		font-size: 5rem;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+		overflow: hidden;
+	}
+
+	.hero-image-placeholder:hover {
+		transform: scale(1.05);
+		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+	}
+
+	.hero-image-placeholder img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		color: var(--text-light);
+		margin-bottom: 2rem;
+		animation: fadeInUp 1s ease 0.2s;
+		animation-fill-mode: both;
+	}
+
+	.hero-buttons {
+		margin-bottom: 2rem;
+		animation: fadeInUp 1s ease 0.4s;
+		animation-fill-mode: both;
+	}
+
+	.hero-social {
+		animation: fadeInUp 1s ease 0.6s;
+		animation-fill-mode: both;
+	}
+
+	.social-link {
+		color: var(--text-light);
+		font-size: 1.5rem;
+		margin: 0 15px;
+		transition:
+			color 0.3s ease,
+			transform 0.3s ease;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		text-decoration: none;
+	}
+
+	.social-link span {
+		font-size: 1rem;
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.social-link:hover {
+		color: var(--accent-color);
+		transform: translateY(-5px);
+	}
+
+	/* Particles */
+	.hero-particles {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.particle {
+		position: absolute;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 50%;
+		animation: float 20s infinite;
+	}
+
+	.particle:nth-child(1) {
+		width: 80px;
+		height: 80px;
+		left: 10%;
+		animation-delay: 0s;
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 0.2),
+			rgba(255, 255, 255, 0.05)
+		);
+	}
+
+	.particle:nth-child(2) {
+		width: 60px;
+		height: 60px;
+		left: 20%;
+		animation-delay: 2s;
+		background: radial-gradient(
+			circle,
+			rgba(62, 125, 218, 0.2),
+			rgba(62, 125, 218, 0.05)
+		);
+	}
+
+	.particle:nth-child(3) {
+		width: 100px;
+		height: 100px;
+		left: 35%;
+		animation-delay: 4s;
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 0.15),
+			rgba(255, 255, 255, 0.03)
+		);
+	}
+
+	.particle:nth-child(4) {
+		width: 40px;
+		height: 40px;
+		left: 50%;
+		animation-delay: 6s;
+		background: radial-gradient(
+			circle,
+			rgba(62, 125, 218, 0.15),
+			rgba(62, 125, 218, 0.03)
+		);
+	}
+
+	.particle:nth-child(5) {
+		width: 70px;
+		height: 70px;
+		left: 80%;
+		animation-delay: 8s;
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.02)
+		);
+	}
+
+	/* Additional floating elements */
+	.hero-particles::before {
+		content: "";
+		position: absolute;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 0.03) 1px,
+			transparent 1px
+		);
+		background-size: 50px 50px;
+		animation: gridMove 30s linear infinite;
+	}
+
+	.hero-particles::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			radial-gradient(
+				ellipse at top,
+				rgba(255, 255, 255, 0.1),
+				transparent 50%
+			),
+			radial-gradient(
+				ellipse at bottom,
+				rgba(62, 125, 218, 0.1),
+				transparent 50%
+			);
+		animation: glowPulse 8s ease-in-out infinite;
+	}
+
+	/* Section Styles */
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: bold;
+		color: var(--primary-color);
+		margin-bottom: 3rem;
+		position: relative;
+	}
+
+	.section-title::after {
+		content: "";
+		display: block;
+		width: 60px;
+		height: 4px;
+		background: var(--secondary-color);
+		margin: 1rem auto;
+		border-radius: 2px;
+	}
+
+	/* About Section */
+	.stat-item h3 {
+		font-size: 2.5rem;
+		font-weight: bold;
+		color: var(--secondary-color);
+		margin-bottom: 0;
+	}
+
+	.stat-item p {
+		font-size: 1.1rem;
+		color: #6c757d;
+	}
+
+	.about-image {
+		text-align: center;
+	}
+
+	.image-placeholder {
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(
+			135deg,
+			var(--primary-color),
+			var(--secondary-color)
+		);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		color: var(--text-light);
+		font-size: 4rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Project Cards */
+	.project-card {
+		background: white;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+		height: 100%;
+	}
+
+	.project-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	.project-image {
+		height: 200px;
+		background: linear-gradient(
+			135deg,
+			var(--primary-color),
+			var(--secondary-color)
+		);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-light);
+		font-size: 3rem;
+	}
+
+	.project-content {
+		padding: 1.5rem;
+	}
+
+	.project-content h4 {
+		color: var(--primary-color);
+		margin-bottom: 1rem;
+	}
+
+	.project-tech {
+		margin: 1rem 0;
+	}
+
+	.project-links {
+		display: flex;
+		gap: 10px;
+	}
+
+	/* Skills */
+	.progress {
+		height: 10px;
+		border-radius: 5px;
+		background-color: #e9ecef;
+	}
+
+	.progress-bar {
+		background: linear-gradient(
+			90deg,
+			var(--primary-color),
+			var(--secondary-color)
+		);
+		border-radius: 5px;
+	}
+
+	/* Contact Form */
+	.contact-form .form-control {
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		color: var(--text-light);
+		border-radius: 10px;
+	}
+
+	.contact-form .form-control::placeholder {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.contact-form .form-control:focus {
+		background: rgba(255, 255, 255, 0.15);
+		border-color: var(--secondary-color);
+		box-shadow: 0 0 0 0.25rem rgba(62, 125, 218, 0.25);
+		color: var(--text-light);
+	}
+
+	.contact-info p {
+		margin: 0.5rem 0;
+	}
+
+	.contact-info i {
+		margin-right: 10px;
+		color: var(--secondary-color);
+	}
+
+	/* Animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0) rotate(0deg) scale(1);
+			opacity: 0.1;
+		}
+		25% {
+			transform: translateY(-30px) rotate(90deg) scale(1.1);
+			opacity: 0.2;
+		}
+		50% {
+			transform: translateY(-50px) rotate(180deg) scale(1.2);
+			opacity: 0.3;
+		}
+		75% {
+			transform: translateY(-30px) rotate(270deg) scale(1.1);
+			opacity: 0.2;
+		}
+	}
+
+	@keyframes gridMove {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(50px, 50px);
+		}
+	}
+
+	@keyframes glowPulse {
+		0%,
+		100% {
+			opacity: 0.3;
+		}
+		50% {
+			opacity: 0.6;
+		}
+	}
+
+	@keyframes gradientShift {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	/* Rain Effect */
+	.rain-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	.rain-drop {
+		position: absolute;
+		width: 2px;
+		height: 20px;
+		background: linear-gradient(
+			to bottom,
+			transparent,
+			rgba(255, 255, 255, 0.6),
+			transparent
+		);
+		animation: rainFall linear infinite;
+	}
+
+	.rain-drop:nth-child(1) {
+		left: 5%;
+		animation-duration: 1.5s;
+		animation-delay: 0s;
+	}
+	.rain-drop:nth-child(2) {
+		left: 10%;
+		animation-duration: 1.8s;
+		animation-delay: 0.3s;
+	}
+	.rain-drop:nth-child(3) {
+		left: 15%;
+		animation-duration: 1.2s;
+		animation-delay: 0.6s;
+	}
+	.rain-drop:nth-child(4) {
+		left: 20%;
+		animation-duration: 2.1s;
+		animation-delay: 0.9s;
+	}
+	.rain-drop:nth-child(5) {
+		left: 25%;
+		animation-duration: 1.6s;
+		animation-delay: 1.2s;
+	}
+	.rain-drop:nth-child(6) {
+		left: 30%;
+		animation-duration: 1.4s;
+		animation-delay: 1.5s;
+	}
+	.rain-drop:nth-child(7) {
+		left: 35%;
+		animation-duration: 1.9s;
+		animation-delay: 1.8s;
+	}
+	.rain-drop:nth-child(8) {
+		left: 40%;
+		animation-duration: 1.3s;
+		animation-delay: 2.1s;
+	}
+	.rain-drop:nth-child(9) {
+		left: 45%;
+		animation-duration: 1.7s;
+		animation-delay: 2.4s;
+	}
+	.rain-drop:nth-child(10) {
+		left: 50%;
+		animation-duration: 1.5s;
+		animation-delay: 2.7s;
+	}
+	.rain-drop:nth-child(11) {
+		left: 55%;
+		animation-duration: 2s;
+		animation-delay: 3s;
+	}
+	.rain-drop:nth-child(12) {
+		left: 60%;
+		animation-duration: 1.4s;
+		animation-delay: 3.3s;
+	}
+	.rain-drop:nth-child(13) {
+		left: 65%;
+		animation-duration: 1.8s;
+		animation-delay: 3.6s;
+	}
+	.rain-drop:nth-child(14) {
+		left: 70%;
+		animation-duration: 1.6s;
+		animation-delay: 3.9s;
+	}
+	.rain-drop:nth-child(15) {
+		left: 75%;
+		animation-duration: 2.2s;
+		animation-delay: 4.2s;
+	}
+	.rain-drop:nth-child(16) {
+		left: 80%;
+		animation-duration: 1.3s;
+		animation-delay: 4.5s;
+	}
+	.rain-drop:nth-child(17) {
+		left: 85%;
+		animation-duration: 1.9s;
+		animation-delay: 4.8s;
+	}
+	.rain-drop:nth-child(18) {
+		left: 90%;
+		animation-duration: 1.5s;
+		animation-delay: 5.1s;
+	}
+	.rain-drop:nth-child(19) {
+		left: 95%;
+		animation-duration: 1.7s;
+		animation-delay: 5.4s;
+	}
+	.rain-drop:nth-child(20) {
+		left: 8%;
+		animation-duration: 2.3s;
+		animation-delay: 5.7s;
+	}
+	.rain-drop:nth-child(21) {
+		left: 18%;
+		animation-duration: 1.4s;
+		animation-delay: 6s;
+	}
+	.rain-drop:nth-child(22) {
+		left: 28%;
+		animation-duration: 1.8s;
+		animation-delay: 6.3s;
+	}
+	.rain-drop:nth-child(23) {
+		left: 38%;
+		animation-duration: 1.6s;
+		animation-delay: 6.6s;
+	}
+	.rain-drop:nth-child(24) {
+		left: 48%;
+		animation-duration: 2s;
+		animation-delay: 6.9s;
+	}
+	.rain-drop:nth-child(25) {
+		left: 58%;
+		animation-duration: 1.5s;
+		animation-delay: 7.2s;
+	}
+	.rain-drop:nth-child(26) {
+		left: 68%;
+		animation-duration: 1.9s;
+		animation-delay: 7.5s;
+	}
+	.rain-drop:nth-child(27) {
+		left: 78%;
+		animation-duration: 1.3s;
+		animation-delay: 7.8s;
+	}
+	.rain-drop:nth-child(28) {
+		left: 88%;
+		animation-duration: 1.7s;
+		animation-delay: 8.1s;
+	}
+	.rain-drop:nth-child(29) {
+		left: 12%;
+		animation-duration: 2.1s;
+		animation-delay: 8.4s;
+	}
+	.rain-drop:nth-child(30) {
+		left: 22%;
+		animation-duration: 1.4s;
+		animation-delay: 8.7s;
+	}
+	.rain-drop:nth-child(31) {
+		left: 32%;
+		animation-duration: 1.8s;
+		animation-delay: 9s;
+	}
+	.rain-drop:nth-child(32) {
+		left: 42%;
+		animation-duration: 1.6s;
+		animation-delay: 9.3s;
+	}
+	.rain-drop:nth-child(33) {
+		left: 52%;
+		animation-duration: 2.2s;
+		animation-delay: 9.6s;
+	}
+	.rain-drop:nth-child(34) {
+		left: 62%;
+		animation-duration: 1.5s;
+		animation-delay: 9.9s;
+	}
+	.rain-drop:nth-child(35) {
+		left: 72%;
+		animation-duration: 1.9s;
+		animation-delay: 10.2s;
+	}
+	.rain-drop:nth-child(36) {
+		left: 82%;
+		animation-duration: 1.3s;
+		animation-delay: 10.5s;
+	}
+	.rain-drop:nth-child(37) {
+		left: 92%;
+		animation-duration: 1.7s;
+		animation-delay: 10.8s;
+	}
+	.rain-drop:nth-child(38) {
+		left: 6%;
+		animation-duration: 2.4s;
+		animation-delay: 11.1s;
+	}
+	.rain-drop:nth-child(39) {
+		left: 16%;
+		animation-duration: 1.4s;
+		animation-delay: 11.4s;
+	}
+	.rain-drop:nth-child(40) {
+		left: 26%;
+		animation-duration: 1.8s;
+		animation-delay: 11.7s;
+	}
+	.rain-drop:nth-child(41) {
+		left: 36%;
+		animation-duration: 1.6s;
+		animation-delay: 12s;
+	}
+	.rain-drop:nth-child(42) {
+		left: 46%;
+		animation-duration: 2s;
+		animation-delay: 12.3s;
+	}
+	.rain-drop:nth-child(43) {
+		left: 56%;
+		animation-duration: 1.5s;
+		animation-delay: 12.6s;
+	}
+	.rain-drop:nth-child(44) {
+		left: 66%;
+		animation-duration: 1.9s;
+		animation-delay: 12.9s;
+	}
+	.rain-drop:nth-child(45) {
+		left: 76%;
+		animation-duration: 1.3s;
+		animation-delay: 13.2s;
+	}
+	.rain-drop:nth-child(46) {
+		left: 86%;
+		animation-duration: 1.7s;
+		animation-delay: 13.5s;
+	}
+	.rain-drop:nth-child(47) {
+		left: 96%;
+		animation-duration: 2.1s;
+		animation-delay: 13.8s;
+	}
+	.rain-drop:nth-child(48) {
+		left: 4%;
+		animation-duration: 1.4s;
+		animation-delay: 14.1s;
+	}
+	.rain-drop:nth-child(49) {
+		left: 14%;
+		animation-duration: 1.8s;
+		animation-delay: 14.4s;
+	}
+	.rain-drop:nth-child(50) {
+		left: 24%;
+		animation-duration: 1.6s;
+		animation-delay: 14.7s;
+	}
+
+	@keyframes rainFall {
+		0% {
+			top: -20px;
+			opacity: 0;
+		}
+		10% {
+			opacity: 0.6;
+		}
+		90% {
+			opacity: 0.6;
+		}
+		100% {
+			top: 100vh;
+			opacity: 0;
+		}
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.2rem;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.hero-image-placeholder {
+			width: 250px;
+			height: 250px;
+			font-size: 4rem;
+			margin-top: 2rem;
+		}
+
+		.image-placeholder {
+			width: 200px;
+			height: 200px;
+			font-size: 3rem;
+		}
+	}
+</style>
+
+<script>
+	// Smooth scrolling for navigation links
+	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+		anchor.addEventListener("click", function (e) {
+			e.preventDefault();
+			const target = document.querySelector(this.getAttribute("href"));
+			if (target) {
+				target.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+				});
+			}
+		});
+	});
+
+	// Navbar background on scroll
+	window.addEventListener("scroll", () => {
+		const navbar = document.querySelector(".navbar");
+		if (window.scrollY > 100) {
+			navbar.style.background = "rgba(17, 60, 105, 0.98)";
+		} else {
+			navbar.style.background = "rgba(17, 60, 105, 0.95)";
+		}
+	});
+
+	// Form Validation and Submission
+	document.addEventListener("DOMContentLoaded", function () {
+		"use strict";
+
+		// Fetch all the forms we want to apply custom validation styles to
+		const forms = document.querySelectorAll(".needs-validation");
+
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms).forEach(function (form) {
+			form.addEventListener(
+				"submit",
+				function (event) {
+					const result = document.getElementById("result");
+
+					if (!form.checkValidity()) {
+						event.preventDefault();
+						event.stopPropagation();
+						form.querySelectorAll(":invalid")[0].focus();
+					} else {
+						/*
+						 * Form Submission using fetch()
+						 */
+						const formData = new FormData(form);
+						event.preventDefault();
+						event.stopPropagation();
+
+						const object = {};
+						formData.forEach((value, key) => {
+							object[key] = value;
+						});
+
+						const json = JSON.stringify(object);
+						if (result) {
+							result.innerHTML = "Enviando...";
+							result.style.color = "#ffffff";
+						}
+
+						fetch("https://api.web3forms.com/submit", {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+								Accept: "application/json",
+							},
+							body: json,
+						})
+							.then(async (response) => {
+								let json = await response.json();
+								if (result) {
+									if (response.status == 200) {
+										result.innerHTML = "✅ " + json.message;
+										result.style.color = "#28a745";
+									} else {
+										console.log(response);
+										result.innerHTML = "❌ " + json.message;
+										result.style.color = "#dc3545";
+									}
+								}
+							})
+							.catch((error) => {
+								console.log(
+									"Error en el envío del formulario:",
+									error,
+								);
+								if (result) {
+									result.innerHTML =
+										"❌ Error de conexión. Intenta nuevamente.";
+									result.style.color = "#dc3545";
+								}
+							})
+							.then(function () {
+								form.reset();
+								form.classList.remove("was-validated");
+								if (result) {
+									setTimeout(() => {
+										result.style.display = "none";
+									}, 5000);
+								}
+							});
+					}
+					form.classList.add("was-validated");
+				},
+				false,
+			);
+		});
+	});
+</script>
