@@ -6,5 +6,10 @@ export default defineConfig({
     output: 'static',
     build: {
         format: 'directory'
+    },
+    vite: {
+        assets: {
+            include: ['**/*.svg', '**/*.jpeg', '**/*.jpg', '**/*.png', '**/*.webp']
+        }
     }
 });
