@@ -1030,6 +1030,8 @@ import Imagen from "../assets/Doc.jpeg";
                                     action="https://api.web3forms.com/submit"
                                     method="POST"
                                     id="contactForm"
+                                    class="needs-validation"
+                                    novalidate
                                 >
                                     <input
                                         type="hidden"
@@ -1045,6 +1047,16 @@ import Imagen from "../assets/Doc.jpeg";
                                         type="hidden"
                                         name="from_name"
                                         value="Portfolio Nicolas Coria"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="reply_to"
+                                        value="%email%"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="redirect"
+                                        value=""
                                     />
 
                                     <div class="mb-3">
@@ -1253,23 +1265,48 @@ import Imagen from "../assets/Doc.jpeg";
                         })
                             .then(async (response) => {
                                 let json = await response.json();
+                                console.log(
+                                    "Respuesta Web3Forms:",
+                                    response.status,
+                                    json,
+                                );
+
                                 if (response.status == 200) {
-                                    result.innerHTML = json.message;
-                                    result.classList.remove("text-gray-500");
-                                    result.classList.add("text-green-500");
+                                    result.innerHTML =
+                                        "¡Mensaje enviado con éxito! Te responderé pronto.";
+                                    result.classList.remove(
+                                        "text-gray-500",
+                                        "text-red-500",
+                                    );
+                                    result.classList.add("text-success");
                                 } else {
-                                    console.log(response);
-                                    result.innerHTML = json.message;
-                                    result.classList.remove("text-gray-500");
-                                    result.classList.add("text-red-500");
+                                    console.error(
+                                        "Error en respuesta:",
+                                        response.status,
+                                        json,
+                                    );
+                                    result.innerHTML =
+                                        json.message ||
+                                        "Error al enviar el mensaje. Por favor, intenta nuevamente.";
+                                    result.classList.remove(
+                                        "text-gray-500",
+                                        "text-success",
+                                    );
+                                    result.classList.add("text-danger");
                                 }
                             })
                             .catch((error) => {
-                                console.log(
+                                console.error(
                                     "Error en el envío del formulario:",
                                     error,
                                 );
-                                result.innerHTML = "Something went wrong!";
+                                result.innerHTML =
+                                    "Error de conexión. Por favor, verifica tu internet e intenta nuevamente.";
+                                result.classList.remove(
+                                    "text-gray-500",
+                                    "text-success",
+                                );
+                                result.classList.add("text-danger");
                             })
                             .then(function () {
                                 form.reset();
