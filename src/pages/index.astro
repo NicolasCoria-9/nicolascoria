@@ -1104,7 +1104,7 @@ import Imagen from "../assets/Doc.jpeg";
                                 </form>
 
                                 <div
-                                    id="formMessage"
+                                    id="result"
                                     class="mt-3"
                                     style="display: none;"
                                 >
@@ -1253,6 +1253,7 @@ import Imagen from "../assets/Doc.jpeg";
                             object[key] = value;
                         });
                         const json = JSON.stringify(object);
+                        result.style.display = "block";
                         result.innerHTML = "Please wait...";
 
                         fetch("https://api.web3forms.com/submit", {
@@ -1265,48 +1266,23 @@ import Imagen from "../assets/Doc.jpeg";
                         })
                             .then(async (response) => {
                                 let json = await response.json();
-                                console.log(
-                                    "Respuesta Web3Forms:",
-                                    response.status,
-                                    json,
-                                );
-
                                 if (response.status == 200) {
-                                    result.innerHTML =
-                                        "¡Mensaje enviado con éxito! Te responderé pronto.";
-                                    result.classList.remove(
-                                        "text-gray-500",
-                                        "text-red-500",
-                                    );
-                                    result.classList.add("text-success");
+                                    result.innerHTML = json.message;
+                                    result.classList.remove("text-gray-500");
+                                    result.classList.add("text-green-500");
                                 } else {
-                                    console.error(
-                                        "Error en respuesta:",
-                                        response.status,
-                                        json,
-                                    );
-                                    result.innerHTML =
-                                        json.message ||
-                                        "Error al enviar el mensaje. Por favor, intenta nuevamente.";
-                                    result.classList.remove(
-                                        "text-gray-500",
-                                        "text-success",
-                                    );
-                                    result.classList.add("text-danger");
+                                    console.log(response);
+                                    result.innerHTML = json.message;
+                                    result.classList.remove("text-gray-500");
+                                    result.classList.add("text-red-500");
                                 }
                             })
                             .catch((error) => {
-                                console.error(
+                                console.log(
                                     "Error en el envío del formulario:",
                                     error,
                                 );
-                                result.innerHTML =
-                                    "Error de conexión. Por favor, verifica tu internet e intenta nuevamente.";
-                                result.classList.remove(
-                                    "text-gray-500",
-                                    "text-success",
-                                );
-                                result.classList.add("text-danger");
+                                result.innerHTML = "Something went wrong!";
                             })
                             .then(function () {
                                 form.reset();
