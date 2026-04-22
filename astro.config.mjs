@@ -2,7 +2,9 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
+// https://astro.build/config
 export default defineConfig({
-  site: 'https://nicolascoria-9.github.io',
-  base: '/nicolascoria',
+    output: 'static',
+    site: 'https://nicolascoria-9.github.io/nicolascoria/',
+    base: '/'
 });
