@@ -16,6 +16,7 @@
     "astro": "^6.1.8",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "resend": "^6.12.2"
+    "resend": "^6.12.2",
+    "sharp": "^0.34.5"
   }
 }
