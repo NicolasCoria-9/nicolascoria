@@ -6,54 +6,36 @@ import { Image } from "astro:assets";
 <Layout title="Nicolas Coria - Especialista en Automatización y Robótica">
     <main>
         <!-- Hero Section -->
-        <section
-            class="hero-section text-white text-center py-5 position-relative overflow-hidden"
-        >
-            <!-- Animated Background -->
-            <div
-                class="hero-background position-absolute top-0 start-0 w-100 h-100"
-            >
-                <div class="animated-gradient"></div>
-                <div class="particles-container">
-                    <div class="particle particle-1"></div>
-                    <div class="particle particle-2"></div>
-                    <div class="particle particle-3"></div>
-                    <div class="particle particle-4"></div>
-                    <div class="particle particle-5"></div>
-                    <div class="particle particle-6"></div>
-                    <div class="particle particle-7"></div>
-                    <div class="particle particle-8"></div>
-                </div>
-                <div class="circuit-lines">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                    <div class="line line-3"></div>
-                    <div class="line line-4"></div>
-                </div>
-            </div>
-            <div class="container py-5 position-relative z-1">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="display-4 fw-bold mb-4">
-                            Lic. Nicolas Antonio Coria
-                        </h1>
-                        <p class="lead mb-4">
-                            Especialista en Automatización y Robótica |
-                            Licenciado en automatizacion y robotica con
-                            experiencia en PLC, HMI, SCADA y sistemas
-                            industriales varios.
-                        </p>
-                        <div
-                            class="d-flex justify-content-center gap-3 flex-wrap"
-                        >
-                            <a href="#proyectos" class="btn btn-light btn-lg"
-                                >Ver Proyectos</a
+        <section class="hero position-relative">
+            <div class="hero-overlay"></div>
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h1 class="display-4 fw-bold mb-4 text-white">
+                                Lic. Nicolas Antonio Coria
+                            </h1>
+                            <p class="lead mb-4 text-white">
+                                Especialista en Automatización y Robótica |
+                                Licenciado en automatizacion y robotica con
+                                experiencia en PLC, HMI, SCADA y sistemas
+                                industriales varios.
+                            </p>
+                            <div
+                                class="d-flex justify-content-center gap-3 flex-wrap"
                             >
-                            <a
-                                href="#contacto"
-                                class="btn btn-outline-light btn-lg"
-                                >Contactar</a
-                            >
+                                <a
+                                    href="#proyectos"
+                                    class="btn btn-light btn-lg"
+                                    >Ver Proyectos</a
+                                >
+                                <a
+                                    href="#contacto"
+                                    class="btn btn-outline-light btn-lg"
+                                    >Contactar</a
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1262,221 +1244,58 @@ import { Image } from "astro:assets";
 </script>
 
 <style>
-    .hero-section {
-        min-height: 60vh;
+    .hero {
+        position: relative;
+        background-color: var(--primary-color);
+        height: 500px;
         display: flex;
         align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
 
-    .hero-background {
-        background: rgb(17, 60, 105);
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.2;
+        background: linear-gradient(
+            135deg,
+            rgb(62, 125, 218) 0%,
+            rgb(17, 60, 105) 100%
+        );
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(17, 60, 105, 0.8);
+        z-index: 0;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: linear-gradient(
             135deg,
             rgb(17, 60, 105) 0%,
             rgb(62, 125, 218) 100%
         );
-        overflow: hidden;
-    }
-
-    .animated-gradient {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            45deg,
-            rgba(17, 60, 105, 0.9) 0%,
-            rgba(62, 125, 218, 0.8) 25%,
-            rgba(17, 60, 105, 0.9) 50%,
-            rgba(62, 125, 218, 0.8) 75%,
-            rgba(17, 60, 105, 0.9) 100%
-        );
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
-    }
-
-    @keyframes gradientShift {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
-    .particles-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .particle {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        animation: float 20s infinite linear;
-    }
-
-    .particle-1 {
-        width: 4px;
-        height: 4px;
-        top: 20%;
-        left: 10%;
-        animation-delay: 0s;
-        animation-duration: 25s;
-    }
-
-    .particle-2 {
-        width: 6px;
-        height: 6px;
-        top: 60%;
-        left: 80%;
-        animation-delay: 2s;
-        animation-duration: 20s;
-    }
-
-    .particle-3 {
-        width: 3px;
-        height: 3px;
-        top: 40%;
-        left: 30%;
-        animation-delay: 4s;
-        animation-duration: 30s;
-    }
-
-    .particle-4 {
-        width: 5px;
-        height: 5px;
-        top: 80%;
-        left: 60%;
-        animation-delay: 6s;
-        animation-duration: 22s;
-    }
-
-    .particle-5 {
-        width: 4px;
-        height: 4px;
-        top: 10%;
-        left: 50%;
-        animation-delay: 8s;
-        animation-duration: 28s;
-    }
-
-    .particle-6 {
-        width: 7px;
-        height: 7px;
-        top: 70%;
-        left: 20%;
-        animation-delay: 10s;
-        animation-duration: 18s;
-    }
-
-    .particle-7 {
-        width: 3px;
-        height: 3px;
-        top: 30%;
-        left: 70%;
-        animation-delay: 12s;
-        animation-duration: 26s;
-    }
-
-    .particle-8 {
-        width: 5px;
-        height: 5px;
-        top: 90%;
-        left: 40%;
-        animation-delay: 14s;
-        animation-duration: 24s;
-    }
-
-    @keyframes float {
-        0% {
-            transform: translateY(0px) translateX(0px);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) translateX(50px);
-            opacity: 0;
-        }
-    }
-
-    .circuit-lines {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .line {
-        position: absolute;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-        );
-        height: 1px;
-        animation: circuitPulse 8s infinite linear;
-    }
-
-    .line-1 {
-        top: 25%;
-        left: -100%;
-        width: 100%;
-        animation-delay: 0s;
-    }
-
-    .line-2 {
-        top: 50%;
-        left: -100%;
-        width: 120%;
-        animation-delay: 2s;
-    }
-
-    .line-3 {
-        top: 75%;
-        left: -100%;
-        width: 80%;
-        animation-delay: 4s;
-    }
-
-    .line-4 {
-        top: 35%;
-        left: -100%;
-        width: 90%;
-        animation-delay: 6s;
-    }
-
-    @keyframes circuitPulse {
-        0% {
-            transform: translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(200%);
-            opacity: 0;
-        }
+        z-index: -1;
     }
 
     .card {
