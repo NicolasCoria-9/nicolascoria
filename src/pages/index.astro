@@ -1,20 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Imagen from "../assets/Doc.jpeg";
 ---
 
-<Layout 
-title="Nicolas Coria - Especialista en Automatización y Robótica"
-url="https://nicolascoria-9.github.io/nicolascoria/"
+<Layout
+    title="Nicolas Coria - Especialista en Automatización y Robótica"
+    url="https://nicolascoria-9.github.io/nicolascoria/"
 >
     <main>
         <!-- Hero Section -->
         <section class="hero position-relative">
             <div class="hero-overlay"></div>
             <div class="hero-bg"></div>
+
+            <!-- Sincronismo Tecnológico -->
+            <div class="tech-sync-overlay">
+                <div class="sync-lines">
+                    <div class="sync-line line-1"></div>
+                    <div class="sync-line line-2"></div>
+                    <div class="sync-line line-3"></div>
+                    <div class="sync-line line-4"></div>
+                    <div class="sync-line line-5"></div>
+                </div>
+                <div class="sync-nodes">
+                    <div class="sync-node node-1"></div>
+                    <div class="sync-node node-2"></div>
+                    <div class="sync-node node-3"></div>
+                    <div class="sync-node node-4"></div>
+                    <div class="sync-node node-5"></div>
+                    <div class="sync-node node-6"></div>
+                </div>
+                <div class="sync-pulses">
+                    <div class="pulse pulse-1"></div>
+                    <div class="pulse pulse-2"></div>
+                    <div class="pulse pulse-3"></div>
+                </div>
+            </div>
+
             <div class="hero-content">
                 <div class="container">
-                    <div class="row justify-content-center min-vh-100 align-items-center" >
+                    <div
+                        class="row justify-content-center min-vh-100 align-items-center"
+                    >
                         <div class="col-lg-8 text-center">
+                            <!-- Imagen Personal -->
+                            <div class="profile-image-container mb-4">
+                                <Image
+                                    src={Imagen}
+                                    alt="Nicolas Coria"
+                                    class="profile-image rounded-circle"
+                                    width={200}
+                                    height={200}
+                                />
+                            </div>
+
                             <h1 class="display-4 fw-bold mb-4 text-white">
                                 Lic. Nicolas Antonio Coria
                             </h1>
@@ -39,8 +79,9 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
                                 >
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>      
+            </div>
         </section>
 
         <!-- About Me Section -->
@@ -1158,88 +1199,92 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
             </div>
         </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        ></script>
     </main>
 </Layout>
 
 <script>
-	(function () {
-		"use strict";
-		/*
-		 * Form Validation
-		 */
+    (function () {
+        "use strict";
+        /*
+         * Form Validation
+         */
 
-		// Fetch all the forms we want to apply custom validation styles to
-		const forms = document.querySelectorAll(".needs-validation");
-		const result = document.getElementById("result");
-		// Loop over them and prevent submission
-		Array.prototype.slice.call(forms).forEach(function (form) {
-			form.addEventListener(
-				"submit",
-				function (event) {
-					if (!form.checkValidity()) {
-						event.preventDefault();
-						event.stopPropagation();
+        // Fetch all the forms we want to apply custom validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+        const result = document.getElementById("result");
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener(
+                "submit",
+                function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
 
-						form.querySelectorAll(":invalid")[0].focus();
-					} else {
-						/*
-						 * Form Submission using fetch()
-						 */
+                        form.querySelectorAll(":invalid")[0].focus();
+                    } else {
+                        /*
+                         * Form Submission using fetch()
+                         */
 
-						const formData = new FormData(form);
-						event.preventDefault();
-						event.stopPropagation();
-						const object = {};
-						formData.forEach((value, key) => {
-							object[key] = value;
-						});
-						const json = JSON.stringify(object);
-						result.innerHTML = "Please wait...";
+                        const formData = new FormData(form);
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const object = {};
+                        formData.forEach((value, key) => {
+                            object[key] = value;
+                        });
+                        const json = JSON.stringify(object);
+                        result.innerHTML = "Please wait...";
 
-						fetch("https://api.web3forms.com/submit", {
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json",
-								Accept: "application/json",
-							},
-							body: json,
-						})
-							.then(async (response) => {
-								let json = await response.json();
-								if (response.status == 200) {
-									result.innerHTML = json.message;
-									result.classList.remove("text-gray-500");
-									result.classList.add("text-green-500");
-								} else {
-									console.log(response);
-									result.innerHTML = json.message;
-									result.classList.remove("text-gray-500");
-									result.classList.add("text-red-500");
-								}
-							})
-							.catch((error) => {
-								console.log(
-									"Error en el envío del formulario:",
-									error,
-								);
-								result.innerHTML = "Something went wrong!";
-							})
-							.then(function () {
-								form.reset();
-								form.classList.remove("was-validated");
-								setTimeout(() => {
-									result.style.display = "none";
-								}, 5000);
-							});
-					}
-					form.classList.add("was-validated");
-				},
-				false,
-			);
-		});
-	})();
+                        fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                Accept: "application/json",
+                            },
+                            body: json,
+                        })
+                            .then(async (response) => {
+                                let json = await response.json();
+                                if (response.status == 200) {
+                                    result.innerHTML = json.message;
+                                    result.classList.remove("text-gray-500");
+                                    result.classList.add("text-green-500");
+                                } else {
+                                    console.log(response);
+                                    result.innerHTML = json.message;
+                                    result.classList.remove("text-gray-500");
+                                    result.classList.add("text-red-500");
+                                }
+                            })
+                            .catch((error) => {
+                                console.log(
+                                    "Error en el envío del formulario:",
+                                    error,
+                                );
+                                result.innerHTML = "Something went wrong!";
+                            })
+                            .then(function () {
+                                form.reset();
+                                form.classList.remove("was-validated");
+                                setTimeout(() => {
+                                    result.style.display = "none";
+                                }, 5000);
+                            });
+                    }
+                    form.classList.add("was-validated");
+                },
+                false,
+            );
+        });
+    })();
 </script>
 
 <script>
@@ -1281,51 +1326,49 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
         --secondary-color: rgb(62, 125, 218);
     }
 
-	.hero {
+    .hero {
         margin-top: -180px;
-		min-height: 100vh;
-		position: relative;
-		background-color: var(--primary-color);
-		height: 800px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-	}
+        min-height: 100vh;
+        position: relative;
+        background-color: var(--primary-color);
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 
     .hero-bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-repeat: repeat; /* Hace el efecto de mosaico */
-		background-size: auto; /* Mantiene el tamaño original de la imagen */
-		background-position: top left;
-		z-index: -1;
-	}
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: repeat; /* Hace el efecto de mosaico */
+        background-size: auto; /* Mantiene el tamaño original de la imagen */
+        background-position: top left;
+        z-index: -1;
+    }
 
     .hero-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(
-			rgba(17, 60, 105, 0.85),
-			rgba(17, 60, 105, 0.85)
-		);
-		z-index: 2;
-	}
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            rgba(17, 60, 105, 0.85),
+            rgba(17, 60, 105, 0.85)
+        );
+        z-index: 2;
+    }
 
-	.hero-content {
-		position: relative;
-		z-index: 3;
-		padding-top: 180px;
-	}
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        padding-top: 180px;
+    }
 
-
-    
     @media (max-width: 991px) {
         .hero {
             margin-top: -130px;
@@ -1564,6 +1607,373 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
             display: none;
         }
     }
+
+    /* Sincronismo Tecnológico */
+    .tech-sync-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    .sync-lines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sync-line {
+        position: absolute;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(62, 125, 218, 0.3) 20%,
+            rgba(62, 125, 218, 0.8) 50%,
+            rgba(62, 125, 218, 0.3) 80%,
+            transparent 100%
+        );
+        border-radius: 2px;
+    }
+
+    .sync-line.line-1 {
+        top: 20%;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        animation: moveLine1 8s linear infinite;
+    }
+
+    .sync-line.line-2 {
+        top: 35%;
+        left: -100%;
+        width: 80%;
+        height: 1px;
+        animation: moveLine2 10s linear infinite 2s;
+    }
+
+    .sync-line.line-3 {
+        top: 50%;
+        left: -100%;
+        width: 120%;
+        height: 3px;
+        animation: moveLine3 6s linear infinite 1s;
+    }
+
+    .sync-line.line-4 {
+        top: 65%;
+        left: -100%;
+        width: 90%;
+        height: 1px;
+        animation: moveLine4 9s linear infinite 3s;
+    }
+
+    .sync-line.line-5 {
+        top: 80%;
+        left: -100%;
+        width: 110%;
+        height: 2px;
+        animation: moveLine5 7s linear infinite 4s;
+    }
+
+    @keyframes moveLine1 {
+        0% {
+            left: -100%;
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes moveLine2 {
+        0% {
+            left: -100%;
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes moveLine3 {
+        0% {
+            left: -120%;
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes moveLine4 {
+        0% {
+            left: -100%;
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.7;
+        }
+        90% {
+            opacity: 0.7;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes moveLine5 {
+        0% {
+            left: -110%;
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.9;
+        }
+        90% {
+            opacity: 0.9;
+        }
+        100% {
+            left: 100%;
+            opacity: 0;
+        }
+    }
+
+    .sync-nodes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sync-node {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: rgba(62, 125, 218, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: pulseNode 2s ease-in-out infinite;
+    }
+
+    .sync-node.node-1 {
+        top: 20%;
+        left: 15%;
+        animation-delay: 0s;
+    }
+
+    .sync-node.node-2 {
+        top: 35%;
+        left: 30%;
+        animation-delay: 0.5s;
+    }
+
+    .sync-node.node-3 {
+        top: 50%;
+        left: 50%;
+        animation-delay: 1s;
+    }
+
+    .sync-node.node-4 {
+        top: 65%;
+        left: 70%;
+        animation-delay: 1.5s;
+    }
+
+    .sync-node.node-5 {
+        top: 80%;
+        left: 85%;
+        animation-delay: 2s;
+    }
+
+    .sync-node.node-6 {
+        top: 25%;
+        left: 60%;
+        animation-delay: 2.5s;
+    }
+
+    @keyframes pulseNode {
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+    }
+
+    .sync-pulses {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .pulse {
+        position: absolute;
+        border: 2px solid rgba(62, 125, 218, 0.6);
+        border-radius: 50%;
+        animation: expandPulse 3s ease-out infinite;
+    }
+
+    .pulse.pulse-1 {
+        top: 45%;
+        left: 25%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+
+    .pulse.pulse-2 {
+        top: 30%;
+        left: 60%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 1s;
+    }
+
+    .pulse.pulse-3 {
+        top: 70%;
+        left: 40%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 2s;
+    }
+
+    @keyframes expandPulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    /* Responsive para sincronismo tecnológico */
+    @media (max-width: 768px) {
+        .sync-line {
+            display: none;
+        }
+
+        .sync-node {
+            width: 6px;
+            height: 6px;
+        }
+
+        .pulse {
+            border-width: 1px;
+        }
+    }
+
+    /* Estilos para imagen de perfil */
+    .profile-image-container {
+        display: inline-block;
+        position: relative;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 2px rgba(62, 125, 218, 0.5);
+        transition: all 0.3s ease;
+        animation: profileFloat 3s ease-in-out infinite;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.05);
+        box-shadow:
+            0 12px 40px rgba(0, 0, 0, 0.4),
+            0 0 0 3px rgba(62, 125, 218, 0.7);
+    }
+
+    @keyframes profileFloat {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Efecto de brillo sutil */
+    .profile-image-container::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(
+            45deg,
+            rgba(62, 125, 218, 0.3),
+            rgba(255, 255, 255, 0.1),
+            rgba(62, 125, 218, 0.3)
+        );
+        border-radius: 50%;
+        z-index: -1;
+        animation: shimmerRotate 4s linear infinite;
+    }
+
+    @keyframes shimmerRotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Responsive para imagen de perfil */
+    @media (max-width: 768px) {
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-width: 3px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-width: 2px;
+        }
+    }
 </style>
-
-
