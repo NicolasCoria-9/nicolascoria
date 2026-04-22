@@ -52,7 +52,7 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
                             class="display-5 fw-bold"
                             style="color: rgb(17, 60, 105);"
                         >
-                            Sobre csv Mí
+                            Sobre Mí
                         </h2>
                         <p class="lead text-muted">
                             Mi perfil profesional y trayectoria en
@@ -1532,3 +1532,36 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
         }
     }
 </style>
+
+<script>
+    // Animate skill bars when section is visible
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "0px 0px -100px 0px",
+    };
+
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const skillBars = entry.target.querySelectorAll(".skill-bar");
+                skillBars.forEach((bar) => {
+                    const skill = bar.getAttribute("data-skill");
+                    bar.style.setProperty("--skill-percent", skill + "%");
+
+                    setTimeout(() => {
+                        bar.classList.add("animated");
+                    }, 100);
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe the skills section
+    document.addEventListener("DOMContentLoaded", () => {
+        const skillsSection = document.getElementById("habilidades");
+        if (skillsSection) {
+            skillObserver.observe(skillsSection);
+        }
+    });
+</script>
