@@ -142,7 +142,7 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
                                                 <p
                                                     class="text-muted small mb-0"
                                                 >
-                                                    ETP No 460 · 2013-2018
+                                                    EETP Nº 460 · 2013-2018
                                                 </p>
                                             </div>
                                         </div>
@@ -340,19 +340,15 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
                                             <span class="badge tech-badge">
                                                 Secaderos
                                             </span>
-                                            >
-                                            <span class="badge tech-badge"
-                                                >SCADA/HMI</span
-                                            >
-                                            <span class="badge tech-badge"
-                                                >AutoCAD</span
-                                            >
-                                            <span class="badge tech-badge"
-                                                >Procesos Frigoríficos</span
-                                            >
-                                            <span class="badge tech-badge"
-                                                >Secaderos</span
-                                            >
+                                            <span class="badge tech-badge">
+                                                SCADA/HMI
+                                            </span>
+                                            <span class="badge tech-badge">
+                                                AutoCAD
+                                            </span>
+                                            <span class="badge tech-badge">
+                                                Procesos Frigoríficos
+                                            </span>
                                         </div>
                                         <small class="text-primary fw-bold"
                                             >2023 - Actualidad</small
@@ -1230,46 +1226,51 @@ url="https://nicolascoria-9.github.io/nicolascoria/"
         --secondary-color: rgb(62, 125, 218);
     }
 
-    .hero {
+	.hero {
         margin-top: -180px;
-        min-height: 100vh;
-        position: relative;
-        overflow: hidden;
-    }
+		min-height: 100vh;
+		position: relative;
+		background-color: var(--primary-color);
+		height: 800px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
 
     .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            135deg,
-            rgb(17, 60, 105) 0%,
-            rgb(62, 125, 218) 100%
-        );
-        z-index: -1;
-    }
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: repeat; /* Hace el efecto de mosaico */
+		background-size: auto; /* Mantiene el tamaño original de la imagen */
+		background-position: top left;
+		z-index: -1;
+	}
 
     .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            rgba(17, 60, 105, 0.85),
-            rgba(17, 60, 105, 0.85)
-        );
-        z-index: 2;
-    }
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			rgba(17, 60, 105, 0.85),
+			rgba(17, 60, 105, 0.85)
+		);
+		z-index: 2;
+	}
 
-    .hero-content {
-        position: relative;
-        z-index: 3;
-        padding-top: 180px;
-    }
+	.hero-content {
+		position: relative;
+		z-index: 3;
+		padding-top: 180px;
+	}
 
+
+    
     @media (max-width: 991px) {
         .hero {
             margin-top: -130px;
