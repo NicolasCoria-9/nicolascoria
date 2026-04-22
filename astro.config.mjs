@@ -3,13 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'static',
-    build: {
-        format: 'directory'
-    },
-    vite: {
-        assets: {
-            include: ['**/*.svg', '**/*.jpeg', '**/*.jpg', '**/*.png', '**/*.webp']
-        }
-    }
+  site: 'https://nicolascoria-9.github.io',
+  base: '/nicolascoria',
 });
