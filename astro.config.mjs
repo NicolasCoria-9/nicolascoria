@@ -5,5 +5,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     output: 'static',
     site: 'https://nicolascoria-9.github.io/nicolascoria/',
-    base: '/nicolasacoria'
+    base: '/nicolascoria'
 });
