@@ -1053,12 +1053,6 @@ import Imagen from "../assets/Doc.jpeg";
                                         name="reply_to"
                                         value="%email%"
                                     />
-                                    <input
-                                        type="hidden"
-                                        name="redirect"
-                                        value=""
-                                    />
-
                                     <div class="mb-3">
                                         <label for="nombre" class="form-label"
                                             >Nombre</label
@@ -1265,24 +1259,47 @@ import Imagen from "../assets/Doc.jpeg";
                             body: json,
                         })
                             .then(async (response) => {
-                                let json = await response.json();
+                                let jsonResponse = await response.json();
+                                console.log(
+                                    "Respuesta Web3Forms:",
+                                    response.status,
+                                    jsonResponse,
+                                );
+
                                 if (response.status == 200) {
-                                    result.innerHTML = json.message;
-                                    result.classList.remove("text-gray-500");
-                                    result.classList.add("text-green-500");
+                                    result.innerHTML =
+                                        jsonResponse.message ||
+                                        "¡Mensaje enviado con éxito! Te responderé pronto.";
+                                    result.classList.remove(
+                                        "text-gray-500",
+                                        "text-red-500",
+                                    );
+                                    result.classList.add("text-success");
                                 } else {
-                                    console.log(response);
-                                    result.innerHTML = json.message;
-                                    result.classList.remove("text-gray-500");
-                                    result.classList.add("text-red-500");
+                                    console.error(
+                                        "Error Web3Forms:",
+                                        response.status,
+                                        jsonResponse,
+                                    );
+                                    result.innerHTML =
+                                        jsonResponse.message ||
+                                        "Error al enviar. Por favor, intenta nuevamente.";
+                                    result.classList.remove(
+                                        "text-gray-500",
+                                        "text-success",
+                                    );
+                                    result.classList.add("text-danger");
                                 }
                             })
                             .catch((error) => {
-                                console.log(
-                                    "Error en el envío del formulario:",
-                                    error,
+                                console.error("Error en el envío:", error);
+                                result.innerHTML =
+                                    "Error de conexión. Verifica tu internet e intenta nuevamente.";
+                                result.classList.remove(
+                                    "text-gray-500",
+                                    "text-success",
                                 );
-                                result.innerHTML = "Something went wrong!";
+                                result.classList.add("text-danger");
                             })
                             .then(function () {
                                 form.reset();
