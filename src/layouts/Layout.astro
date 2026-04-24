@@ -43,14 +43,16 @@ const { title } = Astro.props;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 mb-4">
-						<h5 class="fw-bold">Nicolas Antonio Coria</h5>
-						<p class="mb-0">
+						<h5 class="fw-bold" data-translate="footer.name">
+							Nicolas Antonio Coria
+						</h5>
+						<p class="mb-0" data-translate="footer.title">
 							Licenciado en Automatización y Robótica
 						</p>
 					</div>
 					<div class="row mt-3">
 						<div class="col-12 text-center">
-							<p class="mb-0">
+							<p class="mb-0" data-translate="footer.copyright">
 								&copy; 2026 Nicolas Coria. Todos los derechos
 								reservados.
 							</p>
@@ -131,6 +133,125 @@ const { title } = Astro.props;
 </style>
 
 <script>
+	// Importar traducciones
+	import { translations, getTranslation } from "../utils/translations.js";
+
+	// Estado del idioma
+	let currentLanguage = localStorage.getItem("language") || "es";
+
+	// Función para actualizar el idioma
+	function updateLanguage(lang: string) {
+		currentLanguage = lang;
+		localStorage.setItem("language", lang);
+
+		// Actualizar botones de idioma
+		document.querySelectorAll(".language-btn").forEach((btn: Element) => {
+			const button = btn as HTMLElement;
+			button.classList.toggle("active", button.dataset.lang === lang);
+		});
+
+		// Actualizar atributo lang del HTML
+		document.documentElement.lang = lang;
+
+		// Actualizar todos los elementos con data-translate
+		document
+			.querySelectorAll("[data-translate]")
+			.forEach((element: Element) => {
+				const el = element as HTMLElement;
+				const key = el.dataset.translate;
+				if (key) {
+					const translation = getTranslation(lang, key);
+					if (translation && translation !== key) {
+						el.textContent = translation;
+					}
+				}
+			});
+
+		// Actualizar elementos específicos sin data-translate
+		updateSpecificElements(lang);
+	}
+
+	// Función para actualizar elementos específicos
+	function updateSpecificElements(lang: string) {
+		const t = translations[lang as keyof typeof translations];
+
+		// Hero section
+		const heroTitle = document.querySelector(".hero h1.display-4");
+		if (heroTitle && t.hero) heroTitle.textContent = t.hero.title;
+
+		const heroSubtitle = document.querySelector(".hero .lead");
+		if (heroSubtitle && t.hero) heroSubtitle.textContent = t.hero.subtitle;
+
+		const viewProjectsBtn = document.querySelector(".hero .btn-light");
+		if (viewProjectsBtn && t.hero)
+			viewProjectsBtn.textContent = t.hero.viewProjects;
+
+		const contactBtn = document.querySelector(".hero .btn-outline-light");
+		if (contactBtn && t.hero) contactBtn.textContent = t.hero.contact;
+
+		// About section
+		const aboutTitle = document.querySelector("#sobre-mi .display-5");
+		if (aboutTitle && t.about) aboutTitle.textContent = t.about.title;
+
+		const aboutSubtitle = document.querySelector(
+			"#sobre-mi .lead.text-muted",
+		);
+		if (aboutSubtitle && t.about)
+			aboutSubtitle.textContent = t.about.subtitle;
+
+		const profileTitle = document.querySelector("#sobre-mi .card-title");
+		if (profileTitle && t.about)
+			profileTitle.textContent = t.about.profileTitle;
+
+		// Experience section
+		const expTitle = document.querySelector("#experiencia .display-5");
+		if (expTitle && t.experience) expTitle.textContent = t.experience.title;
+
+		const expSubtitle = document.querySelector(
+			"#experiencia .lead.text-muted",
+		);
+		if (expSubtitle && t.experience)
+			expSubtitle.textContent = t.experience.subtitle;
+
+		// Skills section
+		const skillsTitle = document.querySelector("#habilidades .display-5");
+		if (skillsTitle && t.skills) skillsTitle.textContent = t.skills.title;
+
+		const skillsSubtitle = document.querySelector(
+			"#habilidades .lead.text-muted",
+		);
+		if (skillsSubtitle && t.skills)
+			skillsSubtitle.textContent = t.skills.subtitle;
+
+		// Footer
+		const footerName = document.querySelector("footer h5");
+		if (footerName && t.footer) footerName.textContent = t.footer.name;
+
+		const footerTitle = document.querySelector("footer p.mb-0");
+		if (footerTitle && t.footer) footerTitle.textContent = t.footer.title;
+
+		const footerCopyright = document.querySelector("footer .text-center p");
+		if (footerCopyright && t.footer)
+			footerCopyright.textContent = t.footer.copyright;
+	}
+
+	// Inicialización cuando el DOM está listo
+	document.addEventListener("DOMContentLoaded", () => {
+		// Configurar event listeners para botones de idioma
+		document.querySelectorAll(".language-btn").forEach((btn: Element) => {
+			const button = btn as HTMLElement;
+			button.addEventListener("click", () => {
+				if (button.dataset.lang) {
+					updateLanguage(button.dataset.lang);
+				}
+			});
+		});
+
+		// Cargar idioma guardado
+		updateLanguage(currentLanguage);
+	});
+
+	// Script original del header
 	const header = document.querySelector("header");
 	let lastScroll = 0;
 

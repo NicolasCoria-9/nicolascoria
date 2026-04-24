@@ -5,7 +5,10 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="https://nicolascoria-9.github.io/nicolascoria/">
+            <a
+                class="navbar-brand"
+                href="https://nicolascoria-9.github.io/nicolascoria/"
+            >
                 <h1 class="text-center" style="color: rgb(17, 60, 105);">
                     Nicolas <span style="color: rgb(62, 125, 218);">Coria</span>
                 </h1>
@@ -24,19 +27,57 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre-mi">Sobre Mí</a>
+                        <a
+                            class="nav-link"
+                            href="#sobre-mi"
+                            data-translate="nav.sobreMi">Sobre Mí</a
+                        >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experiencia">Experiencia</a>
+                        <a
+                            class="nav-link"
+                            href="#experiencia"
+                            data-translate="nav.experiencia">Experiencia</a
+                        >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                        <a
+                            class="nav-link"
+                            href="#habilidades"
+                            data-translate="nav.habilidades">Habilidades</a
+                        >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                        <a
+                            class="nav-link"
+                            href="#proyectos"
+                            data-translate="nav.proyectos">Proyectos</a
+                        >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
+                        <a
+                            class="nav-link"
+                            href="#contacto"
+                            data-translate="nav.contacto">Contacto</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link language-selector">
+                            <button
+                                class="btn btn-sm language-btn"
+                                data-lang="es"
+                                title="Español"
+                            >
+                                🇪🇸 ES
+                            </button>
+                            <button
+                                class="btn btn-sm language-btn"
+                                data-lang="en"
+                                title="English"
+                            >
+                                🇬🇧 EN
+                            </button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -85,6 +126,32 @@
         box-shadow: none;
     }
 
+    .language-selector {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .language-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        border: 1px solid var(--primary-color);
+        background-color: white;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+        border-radius: 4px;
+    }
+
+    .language-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .language-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
     @media (max-width: 991px) {
         .navbar-collapse {
             background: white;
@@ -96,6 +163,11 @@
 
         .nav-link {
             padding: 0.75rem 1rem !important;
+        }
+
+        .language-selector {
+            margin-top: 0.5rem;
+            justify-content: center;
         }
     }
 </style>
