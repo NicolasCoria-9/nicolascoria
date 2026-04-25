@@ -170,4 +170,109 @@
             justify-content: center;
         }
     }
+
+    /* Estilos personalizados para botones de descarga */
+    .download-btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .download-btn:hover i {
+        transform: scale(1.1);
+    }
+
+    .download-btn span {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Efecto de brillo en hover */
+    .download-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        transition: left 0.5s;
+    }
+
+    .download-btn:hover::before {
+        left: 100%;
+    }
+
+    /* Estilos específicos para botón primario (CV) */
+    .btn-primary.download-btn {
+        background: linear-gradient(
+            135deg,
+            rgb(17, 60, 105) 0%,
+            rgb(25, 80, 135) 100%
+        );
+        border: none;
+        color: white;
+    }
+
+    .btn-primary.download-btn:hover {
+        background: linear-gradient(
+            135deg,
+            rgb(25, 80, 135) 0%,
+            rgb(35, 100, 155) 100%
+        );
+    }
+
+    /* Estilos específicos para botón secundario (Carta) */
+    .btn-secondary.download-btn {
+        background: linear-gradient(
+            135deg,
+            rgb(62, 125, 218) 0%,
+            rgb(82, 145, 238) 100%
+        );
+        border: none;
+        color: white;
+    }
+
+    .btn-secondary.download-btn:hover {
+        background: linear-gradient(
+            135deg,
+            rgb(82, 145, 238) 0%,
+            rgb(102, 165, 258) 100%
+        );
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .download-btn {
+            min-width: 200px;
+            font-size: 0.9rem;
+            padding: 12px 20px;
+        }
+    }
 </style>

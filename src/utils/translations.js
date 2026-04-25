@@ -4,7 +4,7 @@ export const translations = {
     // Header y navegación
     nav: {
       sobreMi: "Sobre Mí",
-      experiencia: "Experiencia", 
+      experiencia: "Experiencia",
       habilidades: "Habilidades",
       proyectos: "Proyectos",
       contacto: "Contacto"
@@ -14,7 +14,9 @@ export const translations = {
       title: "Lic. Nicolas Antonio Coria",
       subtitle: "Especialista en Automatización y Robótica | Licenciado en automatizacion y robotica con experiencia en PLC, HMI, SCADA y sistemas industriales varios.",
       viewProjects: "Ver Proyectos",
-      contact: "Contactar"
+      contact: "Contactar",
+      downloadCV: "Descargar CV",
+      downloadLetter: "Descargar Carta de Presentación"
     },
     // About section
     about: {
@@ -25,7 +27,7 @@ export const translations = {
       profileText2: "Mi enfoque se centra en el desarrollo de sistemas de control integrales, desde la programación de PLCs hasta la implementación de sistemas SCADA/HMI, siempre buscando la excelencia técnica y la innovación continua.",
       education: "Formación Académica",
       degree1: "Licenciatura en Automatización y Robótica",
-      degree2: "Técnico Universitario en Mecatrónica", 
+      degree2: "Técnico Universitario en Mecatrónica",
       degree3: "Técnico en Electrónica",
       certifications: "Certificaciones Múltiples",
       certificationsText: "PLC, SCADA, Redes Industriales",
@@ -90,9 +92,17 @@ export const translations = {
       subtitle: "Nivel de dominio en automatización y software",
       automationControl: "Automatización y Control",
       softwareProgramming: "Software y Programación",
+      softSkills: {
+        title: "Habilidades Blandas",
+        projectManagement: "Gestión de Proyectos",
+        leadership: "Liderazgo",
+        teamwork: "Trabajo en Equipo",
+        analyticalThinking: "Capacidad de Análisis",
+        costEstimation: "Estimación de Costos"
+      },
       automationSkills: {
         plcProgramming: "Programación PLC",
-        industrialNetworks: "Redes Industriales", 
+        industrialNetworks: "Redes Industriales",
         drives: "Variadores y Drives",
         scada: "SCADA/HMI",
         electricalPlans: "Planos Eléctricos",
@@ -169,7 +179,11 @@ export const translations = {
       email: "Correo Electrónico",
       message: "Mensaje",
       sendButton: "Enviar Mensaje",
-      contactInfo: "Información de Contacto"
+      contactInfo: "Información de Contacto",
+      location: "Ubicación",
+      portfolio: "Portfolio",
+      whatsapp: "WhatsApp",
+      whatsappLabel: "Contactame directamente por WhatsApp"
     },
     // Footer
     footer: {
@@ -183,7 +197,7 @@ export const translations = {
     nav: {
       sobreMi: "About Me",
       experiencia: "Experience",
-      habilidades: "Skills", 
+      habilidades: "Skills",
       proyectos: "Projects",
       contacto: "Contact"
     },
@@ -192,7 +206,9 @@ export const translations = {
       title: "Lic. Nicolas Antonio Coria",
       subtitle: "Automation and Robotics Specialist | Bachelor's degree in automation and robotics with experience in PLC, HMI, SCADA and various industrial systems.",
       viewProjects: "View Projects",
-      contact: "Contact"
+      contact: "Contact",
+      downloadCV: "Download CV",
+      downloadLetter: "Download Cover Letter"
     },
     // About section
     about: {
@@ -204,7 +220,7 @@ export const translations = {
       education: "Academic Formation",
       degree1: "Bachelor's Degree in Automation and Robotics",
       degree2: "University Technician in Mechatronics",
-      degree3: "Electronics Technician", 
+      degree3: "Electronics Technician",
       certifications: "Multiple Certifications",
       certificationsText: "PLC, SCADA, Industrial Networks",
       statistics: "Statistics",
@@ -268,9 +284,17 @@ export const translations = {
       subtitle: "Proficiency level in automation and software",
       automationControl: "Automation and Control",
       softwareProgramming: "Software and Programming",
+      softSkills: {
+        title: "Soft Skills",
+        projectManagement: "Project Management",
+        leadership: "Leadership",
+        teamwork: "Teamwork",
+        analyticalThinking: "Analytical Thinking",
+        costEstimation: "Cost Estimation"
+      },
       automationSkills: {
         plcProgramming: "PLC Programming",
-        industrialNetworks: "Industrial Networks", 
+        industrialNetworks: "Industrial Networks",
         drives: "Drives and Inverters",
         scada: "SCADA/HMI",
         electricalPlans: "Electrical Plans",
@@ -347,7 +371,11 @@ export const translations = {
       email: "Email",
       message: "Message",
       sendButton: "Send Message",
-      contactInfo: "Contact Information"
+      contactInfo: "Contact Information",
+      location: "Location",
+      portfolio: "Portfolio",
+      whatsapp: "WhatsApp",
+      whatsappLabel: "Contact me directly on WhatsApp"
     },
     // Footer
     footer: {
@@ -362,10 +390,10 @@ export const translations = {
 export function getTranslation(language, key) {
   const keys = key.split('.');
   let value = translations[language];
-  
+
   for (const k of keys) {
     value = value?.[k];
   }
-  
+
   return value || key;
 }
